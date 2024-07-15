@@ -16,8 +16,8 @@ body {
 }
 
 .box__info {
-    width: 538px;
-    padding: 102px 0 102px 72px;
+    max-width: 538px;
+    padding: 102px 50px 102px 72px;
     display: flex;
     flex-direction: column;
 }
@@ -43,7 +43,7 @@ body {
 }
 
 .box__btn {
-    width: 342px;
+    max-width: 342px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -94,6 +94,7 @@ body {
     background-color: rgba(240, 244, 252, 1);
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 .modal__cancel {
@@ -198,5 +199,51 @@ body {
 
     &:hover {
         background-color: rgb(249, 246, 246);
+    }
+}
+
+.notification {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 300px;
+    height: 50px;
+    top: 50px;
+    right: 50px;
+    background-color: rgb(211, 213, 211);
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.notification-active {
+    display: flex;
+}
+
+.notification__text {
+    font-size: 18px;
+    padding: 10px;
+}
+
+@media (max-width: 1000px) {
+    body {
+        padding: 24px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .box__info {
+        max-width: 100%;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .box__btn {
+        font-size: 14px;
     }
 }
